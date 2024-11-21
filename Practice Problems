@@ -1,0 +1,49 @@
+# Problem 1: Define the function with 'users' as the input parameter
+
+def organize_users(users): 
+    age_groups = {              
+        "under_18": [],         
+        "18-30": [],
+        "30+": []
+    }
+
+    # Create the dictionary for storing age groups
+    # Start with an empty list for each category
+    
+        for user in users:
+            name = user.get("name", "Unknown")   
+            # Use "Unknown" if "name" is not present
+
+            if user["age"] < 18:    #forgot "age" argument
+                #before - under_18.pop('user')
+                age_groups["under_18"].append("name")  #Add user's name here
+            elif 18 <= user["age"] <= 30:
+                age_groups["18-30"].append("name")
+                
+            ###elif 18 < user < 30:
+                #18-30.pop('user')
+
+
+
+# Problem 2: Keyword Counter
+
+def count_keywords(messages, keywords):
+    keyword_counts = {keyword: 0 for keyword in keywords} #Why is there a for loop in a dictionary? 
+
+###What I initially thought
+###for count_keywords in messages, keywords:
+        #keyword_counts = keyword_counts + 1
+        #return keyword_counts
+
+#Correct Answer
+    for message in messages:
+        for keyword in keywords:
+            if keyword in message:
+                keyword_counts[keyword] += 1
+
+    return keyword_counts
+
+
+# Python API Problem 1
+
+
